@@ -1,0 +1,44 @@
+1.Implicit wait
+2.Explicit wait
+3.Thread.sleep()
+4.Fluent wait
+
+*WebDriverWait and fluentWait are classes implementing wait interface *
+
+1.Implicit wait
+Pros:
+-Global Wait Configuration:
+Implicit wait applies to all WebElements by default, so you don't need to repeatedly add wait statements.
+Reduces redundant code.
+
+-Reduces NoSuchElementException Errors:
+Helps prevent failures caused by slow-loading elements by giving them more time to appear.
+
+Cons:
+-Cannot Handle Dynamic Conditions:
+Implicit wait only waits for the presence of an element, not for conditions like:
+Visibility
+Clickability
+Text presence
+For dynamic conditions, you need Explicit or Fluent Wait.
+
+-Hidden Issues with Mixed Waits:
+Combining Implicit Wait with Explicit Wait can cause unpredictable delays.
+Selenium internally waits for the longer of the two wait times, leading to performance issues.
+
+2.Explicit Wait
+Pros:
+-Unlike implicit wait, explicit wait waits for specific conditions, such as:
+Element visibility: visibilityOfElementLocated()
+Clickability: elementToBeClickable()
+Text presence: textToBePresentInElement()
+Frame switching: frameToBeAvailableAndSwitchToIt()
+
+Cons:
+-No Global Application:
+Explicit waits only apply to one element at a time, unlike implicit waits, which apply globally.
+
+-Possible TimeoutException:
+If the condition is not met within the specified time, it throws a TimeoutException.
+
+
