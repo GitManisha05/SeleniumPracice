@@ -29,9 +29,8 @@ public class contactInformation {
     @Test
     public void openGoogle() throws InterruptedException {
 
-        String emailID = "seleniuma6@gmail.com";
-        String passWard = "Pass@123";
-
+        String emailID = System.getenv("EMAILID");
+        String passWard = System.getenv("PASSWARD");
 
         driver.get("https://docs.google.com/forms/u/0/");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

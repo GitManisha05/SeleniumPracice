@@ -41,9 +41,9 @@ public class scrollingWebPageAndTableGridHandle {
         js.executeScript("document.querySelector('.tableFixHead').scrollTop = 500");
         //td:nth-child(4)\")");
 
-        List<WebElement> allcount = driver.findElements(By.cssSelector(".tableFixHead th:nth-child(4)"));
+        List<WebElement> allcount = driver.findElements(By.cssSelector(".tableFixHead thead"));
         int sum =0;
-
+        System.out.println(allcount.get(0).);
         for(int i =0; i< allcount.size();i++){
 
             String text = allcount.get(i).getText();
@@ -53,6 +53,7 @@ public class scrollingWebPageAndTableGridHandle {
         }
 
         System.out.println("SUM : " + sum);
+        Thread.sleep(100000);
 
     }
 
